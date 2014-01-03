@@ -42,19 +42,19 @@ define(['jquery', 'underscore', 'backbone'], function() {
 
     function haversine(lat1, lon1, lat2, lon2, units) {
         units = units || 'miles';
-        var Radius = 3960;  // Radius of the earth in miles
+        var radius = 3960;  // Radius of the earth in miles
 
         if (units === 'km') {
-            Radius = 6371;  // Radius of the earth in km
+            radius = 6371;  // Radius of the earth in km
         }
 
-        var latDelta = deg2rad(lat2-lat1);  // deg2rad below
-        var lonDelta = deg2rad(lon2-lon1);
+        var latDelta = deg2rad(lat2 - lat1);
+        var lonDelta = deg2rad(lon2 - lon1);
         var a = Math.sin(latDelta / 2) * Math.sin(latDelta / 2) +
                 Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
                 Math.sin(lonDelta / 2) * Math.sin(lonDelta / 2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var distance = Radius * c;
+        var distance = radius * c;
 
         return distance;
     }
