@@ -66,6 +66,39 @@ require(['jquery', 'underscore', 'backbone',
                 event.preventDefault();
                 that.playlist.next();
             });
+
+
+            var currentdate = new Date();
+            var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+
+            console.log(datetime);
+
+            // GYROSCOPE
+            // if (window.DeviceMotionEvent==undefined) {
+            // }
+            // window.ondevicemotion = function(event) {
+            //     ax = event.accelerationIncludingGravity.x
+            //     ay = event.accelerationIncludingGravity.y
+            //     az = event.accelerationIncludingGravity.z
+            //     rotation = event.rotationRate;
+
+            //     if (rotation != null) {
+            //         arAlpha = Math.round(rotation.alpha);
+            //         arBeta = Math.round(rotation.beta);
+            //         arGamma = Math.round(rotation.gamma);
+            //     }
+            // }
+
+            // window.ondeviceorientation = function(event) {
+            //     alpha = Math.round(event.alpha);
+            //     beta = Math.round(event.beta);
+            //     gamma = Math.round(event.gamma);
+            // }
         }
 
         function embedable() {

@@ -26,7 +26,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
             }
 
             // TODO: check index bounds
-            SC.stream(playlist.tracks[index].uri, {
+            SC.stream(playlist.tracks[index].stream_url, {
                 ontimedcomments: function(comments) {
                     console.log(comments);
 
@@ -43,9 +43,10 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
                     that.next();
                 }
             }, function(sound) {
+                console.log('SOUND');
                 console.log(sound);
                 that.set({sound: sound, index: index});
-                that.play();
+                // that.play();
             });
         },
         next: function() {
