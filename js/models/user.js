@@ -18,8 +18,6 @@ define(['jquery', 'underscore', 'backbone'], function() {
                             accuracy: location.coords.accuracy
                         }
                     });
-
-                    console.log('DISTANCE: ', that.getDistance(0, 0));
                 });
             } else {
                 console.log('Geolocation is not supported');
@@ -33,7 +31,7 @@ define(['jquery', 'underscore', 'backbone'], function() {
             if (typeof units === 'undefined') {
                 units = 'miles';
             } else if (units !== 'km' || units !== 'miles') {
-                units = 'miles'
+                units = 'miles';
             }
 
             return haversine(position.lat, position.lon, lat, lon, units);
